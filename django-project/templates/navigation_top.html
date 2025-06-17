@@ -1,0 +1,45 @@
+{% load static %}
+<!-- Navbar (sit on top) -->
+<div class="w3-top" style="z-index: 998;">
+  <div class="w3-ba w3-white w3-card w3-animate-opacity w3-padding-small w3-round-large" id="myNavbar"
+       style="display: flex; align-items: center; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+
+    <!-- Logo -->
+    <a href="#home" class="w3-bar-item w3-button w3-hover-none w3-padding-16">
+      <img src="{% static 'images/logo.png' %}" alt="company-logo" style="width: 140px;">
+    </a>
+
+    <!-- Spacer to push menu to right -->
+    <div class="w3-bar-item" style="flex: 1;"></div>
+
+    <!-- Right side menu -->
+    <div class="w3-bar-item w3-hide-small" style="display: flex; gap: 10px; align-items: center;">
+       <div class="w3-dropdown-hover">
+          <button class="w3-bar-item w3-button w3-white w3-hover-white w3-hover-text-blue w3-padding-16">
+            <i class="fa fa-user"></i> Products Management <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="w3-dropdown-content w3-bar-block w3-card-4" style="width: 250px;">
+            <a href="{% url 'app_products:product_list' %}" class="w3-bar-item w3-button w3-dark-grey w3-hover-blue w3-hover-text-white">All Products</a>
+            <a href="{% url 'app_products:categorys' %}" class="w3-bar-item w3-button w3-dark-grey w3-hover-blue w3-hover-text-white">Categories</a>
+          </div>
+        </div>
+
+      <a href="{% url 'users:logout' %}" class="w3-button w3-padding-16 w3-text-red w3-hover-text-blue w3-hover-none"><i class="fa fa-sign-in"></i> Logout</a>
+    </div>
+
+    <!-- Menu icon for small screens -->
+    <a href="javascript:void(0)"
+       class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium w3-hover-text-blue"
+       onclick="w3_open()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+</div>
+
+<!-- Sidebar for small screens -->
+<nav class="w3-sidebar w3-bar-block w3-blue w3-card w3-animate-left w3-hide-medium w3-hide-large"
+     style="display:none; z-index: 999" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16 w3-hover-red">Close ×</a>
+  <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-text-white w3-hover-orange">Products Management</a>
+  <a href="{% url 'users:logout' %}" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-text-white w3-hover-orange">Logout</a>
+</nav>

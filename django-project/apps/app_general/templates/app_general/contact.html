@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load static %}
+{% load widget_tweaks %}
+
+{% block main-content %}
+<div class="contact-page">
+  <div class="w3-container w3-padding-64 w3-light-grey w3-opacity-min" id="contact">
+    <div class="w3-content w3-round-large w3-white w3-padding-large" style="max-width:800px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+
+      <!-- Header -->
+      <div class="w3-center w3-padding-32">
+        <h1 class="w3-xxxlarge w3-text-blue"><b>Contact Us</b></h1>
+        <p class="w3-large">Have questions or want to get in touch? We'd love to hear from you!</p>
+      </div>
+
+      <!-- Contact Form (non-transparent) -->
+      <form class="w3-container w3-padding-24 w3-round-large" style="background-color: white;">
+        <div class="w3-section">
+          <label><b>Name</b></label>
+          <input class="w3-input w3-border w3-round" type="text" name="name" required>
+        </div>
+
+        <div class="w3-section">
+          <label><b>Email</b></label>
+          <input class="w3-input w3-border w3-round" type="email" name="email" required>
+        </div>
+
+        <div class="w3-section">
+          <label><b>Message</b></label>
+          <textarea class="w3-input w3-border w3-round" name="message" rows="5" required></textarea>
+        </div>
+
+        <button class="w3-button w3-blue w3-round-large w3-margin-top" type="submit">
+          <i class="fa fa-paper-plane"></i> Send Message
+        </button>
+      </form>
+
+      <!-- Contact Info -->
+      <div class="w3-panel w3-leftbar w3-border-blue w3-margin-top w3-padding">
+        <p><i class="fa fa-map-marker w3-text-blue"></i> Saysettha Road, Nonkhor, Saysettha District, Vientiane, LAO PDR</p>
+        <p><i class="fa fa-phone w3-text-blue"></i> +123 456 7890</p>
+        <p><i class="fa fa-envelope w3-text-blue"></i> info@natureproducts.com</p>
+      </div>
+
+    </div>
+  </div>
+</div>
+{% endblock %}

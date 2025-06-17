@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+{% load widget_tweaks %}
+{% load humanize %}
+
+
+{% block main-content %}
+<div style="margin-top: 110px;">
+    <div class="w3-container">
+        <button onclick="document.getElementById('popupModalCategory').style.display='block'"
+        class="w3-button w3-blue w3-blue w3-hover-red w3-round-xxlarge w3-hover-shadow w3-margin-bottom w3-padding"
+        style="width: 250px; z-index: 2; position: absolute; right: 10px; bottom: 10px;">
+            Add Category
+        </button>
+        <table class="w3-table w3-hoverable">
+            <tr>
+                <th class="w3-center w3-blue w3-border">ID</th>
+                <th class="w3-center w3-blue w3-border">Product Name</th>
+                <th class="w3-center w3-blue w3-border">Product Descriptions</th>
+            </tr>
+            {% for category in all_category %}
+                <tr>
+                    <td class="w3-border">{{forloop.counter}}</td>
+                    <td class="w3-border">{{category.category_name}}</td>
+                    <td class="w3-border">{{category.category_descriptions}}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+{% include "app_products/components/category_popup_modal.html" %}
+{% endblock %}

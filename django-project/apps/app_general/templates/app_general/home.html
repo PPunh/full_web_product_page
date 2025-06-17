@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+{% load widget_tweaks %}
+
+
+{% block main-content %}
+    <!-- Import Hero Section  -->
+    {% include 'app_general/components/hero.html' %}
+
+    <!-- Import About Section  -->
+    {% include 'app_general/components/about.html' %}
+
+    <!-- Import Product Section  -->
+    {% include 'app_general/components/products.html' %}
+
+    <!-- Import Services Section -->
+    {% include 'app_general/components/service.html' %}
+
+    <!-- Import Contact Section -->
+    {% include 'app_general/components/contact.html' %}
+
+{% endblock %}

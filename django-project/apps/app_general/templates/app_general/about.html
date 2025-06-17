@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+{% load static %}
+{% load widget_tweaks %}
+
+
+{% block main-content %}
+<div class="w3-container" style="margin-top: 150px;">
+      <!-- Header with Background Image -->
+    <header class="w3-container header-img w3-center w3-padding-64">
+        <h1 class="w3-xxxlarge w3-animate-opacity"><b>About Us</b></h1>
+        <p class="w3-xlarge w3-animate-opacity">Discover who we are and what we stand for.</p>
+    </header>
+
+    <!-- Main Content -->
+    <div class="w3-container w3-padding-64 w3-light-grey">
+        <div class="w3-content" style="max-width:1100px">
+        
+        <!-- About Text -->
+        <div class="w3-row-padding">
+            <div class="w3-col m6">
+            <h2>Our Story</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus convallis nulla nec pulvinar. Integer et massa sit amet dolor ultrices dapibus. Sed vehicula elit a magna laoreet, ut tincidunt nibh porta. Phasellus nec lacinia lorem. Maecenas condimentum mauris a lorem efficitur, nec volutpat felis feugiat.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tempor justo nec velit vulputate, ut viverra justo lobortis. Integer efficitur sagittis lacus a vestibulum.</p>
+            </div>
+            <div class="w3-col m6">
+            <img src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" style="width:100%" class="w3-round w3-shadow-large" alt="Nature Image">
+            </div>
+        </div>
+
+        <!-- Vision & Mission -->
+        <div class="w3-row-padding w3-margin-top">
+            <div class="w3-col m6 w3-padding">
+            <h3>Our Mission</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ut purus ac massa dictum dapibus non at orci.</p>
+            </div>
+            <div class="w3-col m6 w3-padding">
+            <h3>Our Vision</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer aliquam metus sed purus porta, ut volutpat lorem finibus.</p>
+            </div>
+        </div>
+
+        </div>
+    </div>
+
+    <!-- Team Section -->
+    <div class="w3-container w3-padding-64 w3-white">
+        <div class="w3-content" style="max-width:1100px">
+        <h2 class="w3-center">Meet Our Team</h2>
+        <div class="w3-row-padding w3-margin-top">
+            <div class="w3-third w3-center">
+            <img src="https://images.unsplash.com/photo-1606814893907-c2e42943c91f?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="w3-circle" style="width:60%">
+            <h4>John Doe</h4>
+            <p>Founder & CEO</p>
+            </div>
+            <div class="w3-third w3-center">
+            <img src="https://images.unsplash.com/photo-1606814893907-c2e42943c91f?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="w3-circle" style="width:60%">
+            <h4>Jane Smith</h4>
+            <p>Creative Director</p>
+            </div>
+            <div class="w3-third w3-center">
+            <img src="https://images.unsplash.com/photo-1606814893907-c2e42943c91f?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="w3-circle" style="width:60%">
+            <h4>Tom Lee</h4>
+            <p>Marketing Manager</p>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
