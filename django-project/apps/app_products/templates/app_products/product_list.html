@@ -7,29 +7,42 @@
 {% block main-content %}
 <div style="margin-top: 110px;">
     <div class="w3-container">
-        <button onclick="document.getElementById('popupModal').style.display='block'"
-        class="w3-button w3-blue w3-blue w3-hover-red w3-round-xxlarge w3-hover-shadow w3-margin-bottom w3-padding"
-        style="width: 250px; z-index: 2; position: absolute; right: 10px; bottom: 10px;">
-            Add new product
-        </button>
-        <table class="w3-table w3-hoverable">
-            <tr>
-                <th class="w3-center w3-blue w3-border">ID</th>
-                <th class="w3-center w3-blue w3-border">Product Name</th>
-                <th class="w3-center w3-blue w3-border">Description</th>
-                <th class="w3-center w3-blue w3-border">Price</th>
-                <th class="w3-center w3-blue w3-border">Category Name</th>
-            </tr>
-            {% for product in all_product %}
+
+        <div class="w3-right-align w3-margin-bottom">
+            <button onclick="document.getElementById('popupModal').style.display='block'"
+            class="w3-button w3-blue w3-hover-red w3-round-xxlarge w3-hover-shadow"
+            style="width: 100%; max-width: 250px;">
+                Add new product
+            </button>
+        </div>
+
+        <div class="w3-responsive">
+            <table class="w3-table w3-hoverable w3-mobile">
                 <tr>
-                    <td class="w3-border w3-center w3-text-red">{{forloop.counter}}</td>
-                    <td class="w3-border">{{product.product_name}}</td>
-                    <td class="w3-border">{{product.product_description}}</td>
-                    <td class="w3-border">{{product.product_pricing|intcomma}}</td>
-                    <td class="w3-border w3-center w3-text-green">{{product.product_category.category_name }}</td>
+                    <th class="w3-center w3-blue w3-border">ID</th>
+                    <th class="w3-center w3-blue w3-border">Product Image</th>
+                    <th class="w3-center w3-blue w3-border">Product Name</th>
+                    <th class="w3-center w3-blue w3-border">Description</th>
+                    <th class="w3-center w3-blue w3-border">Price</th>
+                    <th class="w3-center w3-blue w3-border">Category Name</th>
                 </tr>
-            {% endfor %}
-        </table>
+                {% for product in all_product %}
+                    <tr>
+                        <td class="w3-border w3-center w3-text-red">{{ forloop.counter }}</td>
+                        <td class="w3-border w3-center">
+                            <a href="{% url 'app_products:edit_this_product' product.product_id %}">
+                                <img src="{{ product.product_image.url }}" alt="{{ product.product_name }}" style="width: 100px; height: auto; object-fit: cover;">
+                            </a>
+                        </td>
+                        <td class="w3-border">{{ product.product_name }}</td>
+                        <td class="w3-border">{{ product.product_description }}</td>
+                        <td class="w3-border">{{ product.product_pricing|intcomma }}</td>
+                        <td class="w3-border w3-center w3-text-green">{{ product.product_category.category_name }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+
     </div>
 </div>
 {% include "app_products/components/popup_modal.html" %}

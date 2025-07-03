@@ -1,5 +1,5 @@
 # coding=utf-8
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
 from django.contrib import messages
 
@@ -18,6 +18,16 @@ def home(request):
     context = {
         'title': 'All Products',
         'all_products':all_products
+    }
+    return render(request, template, context)
+
+#Product Details
+def product_details(request, product_id):
+    one_product = get_object_or_404(ProductsModel, product_id=product_id)
+    template = 'app_products/product_details.html'
+    context = {
+        'title':'Product Details',
+        'one_product':one_product
     }
     return render(request, template, context)
 
@@ -69,7 +79,25 @@ def product_list(request):
         'all_product':all_product,
     })
 
-        
+#Edit Product Uploaded
+def edit_product_uploaded(request, product_id):
+    product_instance = get_object_or_404(ProductsModel, product_id=product_id)
+    if request.method == 'POST':
+        form = ProductsModelForm(request.POST, request.FILES, instance = product_instance)
+        if form.is_valid():
+            form.save()
+            return redirect('app_products:product_list')
+        else:
+            print(f"Edit This Product Erros: {form.errors}")
+    else:
+        form = ProductsModelForm(instance = product_instance)
+    template = 'app_products/edit_product_uploaded.html'
+    context = {
+        'title':'Edit this product',
+        'product_instance':product_instance,
+        'edit_this_product':form
+    }
+    return render(request, template, context)
 
 
 #Add New Product

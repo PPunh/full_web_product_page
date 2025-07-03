@@ -7,9 +7,8 @@
 
 {% block main-content %}
 
-    <br>
     <div class="w3-row w3-container w3-center">
-        <img src="{% static 'images/logo.png' %}" alt="logo" class="w3-image" style="width: 500px; margin: 100px;">
+        <img src="{% static 'images/logo.png' %}" alt="logo" class="w3-image" style="width: 500px; margin-top: 150px;">
     </div>
 
     <div class="w3-row-padding">
@@ -23,26 +22,32 @@
             </div>
             {% endif %}
 
-            <form method="post" class="w3-container">
-                {% csrf_token %}
-                <div class="w3-section">
-                    <label class="w3-text-dark-grey">Username, Email</label>
-                    <input type="text" name="username" autofocus="" autocomplete="off" maxlength="150" class="w3-input w3-animate-input w3-theme-l5 w3-round-xlarge" required="" id="id_username">
-                </div>
+            <div class="w3-container w3-light-grey w3-round-xlarge w3-card-4 w3-margin-medium w3-padding-64">
+                <form method="post" class="w3-container">
+                    {% csrf_token %}
+                    <div class="w3-section">
+                        <label class="w3-text-dark-grey">Username, Email</label>
+                        <input type="text" name="username" autofocus="" autocomplete="off" maxlength="150" class="w3-input w3-animate-input w3-theme-l5 w3-round-xlarge w3-border w3-border-blue" required="" id="id_username">
+                    </div>
 
-                <div class="w3-section">
-                    <label class="w3-text-dark-grey">Password</label>
-                    <input type="password" name="password" autocomplete="off" maxlength="150" class="w3-input w3-theme-l5 w3-round-xlarge" required="" id="id_password">
-                </div>
-                <br>
-                <button class="w3-button w3-round-xlarge w3-block w3-margin-top w3-blue w3-hover-orange w3-hover-shadow" type="submit">Login</button>
-            </form>
+                    <div class="w3-section">
+                        <label class="w3-text-dark-grey">Password</label>
+                        <input type="password" name="password" autocomplete="off" maxlength="150" class="w3-input w3-theme-l5 w3-round-xlarge w3-border w3-border-blue" required="" id="id_password">
+                    </div>
+                    <br>
+                    <div class="w3-row-padding">
+                        <button class="w3-button w3-round-xlarge w3-block w3-margin-top w3-blue w3-hover-orange w3-hover-shadow w3-half w3-padding" type="submit">Login</button>
+                        <a href="{% url 'app_general:home' %}" class="w3-button w3-round-xlarge w3-block w3-margin-top w3-red w3-hover-black w3-hover-shadow w3-half w3-padding">Cancle</a>
+                    </div>
+                </form>
+            </div>
         </div>
         <div class="w3-col m2 l4 w3-center">&nbsp;</div>
     </div>
-    <div class="w3-container w3-center">
+    <div class="w3-container w3-center" style="margin-bottom: 200px;">
         <p class="lao-noto w3-text-blue"><strong>Create by:</strong> Bounpunh LOYSURYYA</p>
     </div>
+
 
 
 

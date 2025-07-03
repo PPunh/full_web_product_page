@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+{% load widget_tweaks %}
+{% load humanize %}
+
+
+{% block main-content %}
+<div style="margin-top: 100px;">
+    <div class="w3-container w3-card-4 w3-padding-32">
+        <!-- Repeat this block for each product -->
+        <h1 class="w3-text-blue">Product Name: {{product_instance.product_name}}, {{product_instance.product_pricing}} Kip</h1>
+        <div class="w3-container w3-row-padding">
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{edit_this_product.as_p}}
+                <div class="w3-container">
+                    <button class="w3-button w3-green w3-round-xxlarge w3-hover-shadow w3-hover-pink" style="width: 250px;">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

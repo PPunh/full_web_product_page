@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+{% load widget_tweaks %}
+{% load humanize %}
+
+
+{% block main-content %}
+<div style="margin-top: 100px;">
+    <div class="w3-container w3-card-4 w3-padding-32">
+        <!-- Repeat this block for each product -->
+        <h1>Product Name: {{one_product.product_name}}</h1>
+        <h4>Product Description: {{one_product.product_description}}</h4>
+        <div class="w3-container w3-row-padding">
+            <div class="w3-half" w3-container>
+                <img src="{{ one_product.product_image.url }}" alt="{{one_product.product_name}}" style="width:100%; height: 550px; object-fit: cover;">
+            </div>
+            <div class="w3-half w3-container w3-padding">
+                <ul>
+                    <li><h3><strong>Product Name: </strong>{{one_product.product_image}}</h3></li>
+                    <li><h3><strong>Pricing: </strong>{{one_product.product_pricing|intcomma}} Kip</h3></li>
+                    <li><h3><strong>Descriptions: </strong>{{one_product.product_description}}</h3></li>
+                    <li><h3><strong class="w3-text-pink">Product Name: </strong>{{one_product.product_category}}</h3></li>
+                </ul>
+                <div class="w3-container">
+                    <button class="w3-button w3-green w3-round-xxlarge w3-hover-shadow w3-hover-pink" style="width: 250px;">Buy Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
